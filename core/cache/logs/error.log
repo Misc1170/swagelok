@@ -1,0 +1,18 @@
+[2023-08-25 15:06:57] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\cache\includes\elements\modx\revolution\modsnippet\39.include.cache.php : 6) PHP warning: Undefined variable $showTitle
+[2023-08-25 15:06:57] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\cache\includes\elements\modx\revolution\modsnippet\39.include.cache.php : 19) PHP warning: Undefined variable $hideShowMore
+[2023-08-25 15:06:57] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\cache\includes\elements\modx\revolution\modsnippet\39.include.cache.php : 26) PHP warning: Undefined variable $hideShowMore
+[2023-08-25 15:06:57] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\cache\includes\elements\modx\revolution\modsnippet\39.include.cache.php : 6) PHP warning: Undefined variable $showTitle
+[2023-08-25 15:06:57] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\cache\includes\elements\modx\revolution\modsnippet\39.include.cache.php : 19) PHP warning: Undefined variable $hideShowMore
+[2023-08-25 15:06:57] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\cache\includes\elements\modx\revolution\modsnippet\39.include.cache.php : 26) PHP warning: Undefined variable $hideShowMore
+[2023-08-25 15:13:47] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\vendor\james-heinrich\phpthumb\phpthumb.class.php : 1587) PHP warning: file_get_contents(C:\OSPanel\domains\swagelok_modx\core\cache\phpthumb\phpThumbCacheIMversion.txt): Failed to open stream: No such file or directory
+[2023-08-25 15:13:47] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\vendor\james-heinrich\phpthumb\phpthumb.class.php : 1514) PHP warning: file_get_contents(C:\OSPanel\domains\swagelok_modx\core\cache\phpthumb\phpThumbCacheIMcommandlineBase.txt): Failed to open stream: No such file or directory
+[2023-08-25 15:13:47] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\src\Revolution\modPhpThumb.php : 335) PHP warning: Undefined array key "sia"
+[2023-08-25 15:13:47] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\src\Revolution\modPhpThumb.php : 335) PHP warning: Undefined array key "down"
+[2023-08-25 15:13:47] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\src\Revolution\modPhpThumb.php : 337) PHP warning: Undefined array key "down"
+[2023-08-25 15:13:47] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\src\Revolution\modPhpThumb.php : 339) PHP warning: Undefined array key "down"
+[2023-08-25 15:30:01] (ERROR in resource 86 @ C:\OSPanel\domains\swagelok_modx\core\src\Revolution\modLinkTag.php : 114) Bad link tag `[[~86]]` encountered
+[2023-08-25 15:30:01] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\cache\includes\elements\modx\revolution\modsnippet\39.include.cache.php : 29) PHP warning: Undefined variable $alias
+[2023-08-25 15:30:27] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\vendor\xpdo\xpdo\src\xPDO\Cache\xPDOCacheManager.php : 319) PHP warning: mkdir(): File exists
+[2023-08-25 15:30:27] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\vendor\xpdo\xpdo\src\xPDO\Cache\xPDOCacheManager.php : 324) PHP warning: mkdir(): File exists
+[2023-08-25 15:30:27] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\vendor\xpdo\xpdo\src\xPDO\Cache\xPDOCacheManager.php : 319) PHP warning: mkdir(): File exists
+[2023-08-25 15:30:27] (ERROR @ C:\OSPanel\domains\swagelok_modx\core\vendor\xpdo\xpdo\src\xPDO\Cache\xPDOCacheManager.php : 324) PHP warning: mkdir(): File exists

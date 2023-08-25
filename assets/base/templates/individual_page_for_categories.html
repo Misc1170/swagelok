@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    [[!$base_head]]
+</head>
+
+<body>
+
+<div class="bg-white py-10"> [[!$header]] </div>
+
+<div class="category h-full w-full flex py-6" style="background:no-repeat url('[[*banner]]');min-height: 330px">
+    <div class="container flex">
+        <div class="lg:block hidden w-5/12"></div>
+        <div>
+            <h2 class="">[[*pagetitle]]</h2>
+            <ul class="my-6">
+
+                <li>
+                    <strong>[[*pagetitle]]</strong><strong
+                        class="text-66B645"> (2571)</strong>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+[[product_similiar?
+&parents=`[[*id]]`
+&alias=`[[+alias]]`
+&limit=``
+&showTitle=`0`
+&hideShowMore=`1`
+]]
+
+
+[[!$footer]]
+
+</body>
+</html>

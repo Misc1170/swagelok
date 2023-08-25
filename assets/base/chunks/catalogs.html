@@ -1,0 +1,47 @@
+<div class="bg-white py-32">  <!--py-10 -->
+
+    <div class="container mt-10">
+        [[!$breadcrumbs]]
+        <h2 class="mt-2 uppercase">[[*pagetitle]]</h2>
+
+
+        [[pdoMenu?
+        &parents=`49`
+        &level=`0`
+        &includeTVs=`catalog_path,catalog_title`
+        &tplOuter=`@INLINE
+        <div class="lg:grid grid-cols-2 gap-4 flex flex-col mt-12">
+            [[+wrapper]]
+        </div>
+        `
+        &tpl=`@INLINE
+        <div class="col-span-1 md:my-10 my-4">
+            <h2 class="mb-8 uppercase text-66B645">[[+pagetitle]]</h2>
+            [[ +wrapper]]
+        </div>
+        `
+        &tplInner=`@INLINE
+        <ul>
+            [[ +wrapper]]
+        </ul>
+        `
+        &tplInnerRow=`@INLINE
+        <li class="my-2">
+            <a class="flex items-center gap-6" href="[[+catalog_path]]" download>
+                <img src="/assets/resources/images/pdf_icon.png" alt="PDF">
+                <h6>[[+pagetitle]][[+catalog_title]]</h6>
+            </a>
+        </li>
+        `
+        ]]
+
+
+    </div>
+</div>
+
+
+
+
+
+
+

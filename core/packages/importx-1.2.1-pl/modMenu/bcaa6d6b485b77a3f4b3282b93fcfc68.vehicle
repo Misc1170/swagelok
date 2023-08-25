@@ -1,0 +1,30 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => true,
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'importx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'a4aa3ca670dc05ee4f0c59a23b5a0c06',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => 'bcaa6d6b485b77a3f4b3282b93fcfc68',
+  'native_key' => 'importx',
+  'object' => '{"text":"importx","parent":"components","action":"home","description":"importx.description","icon":"","menuindex":0,"params":"","handler":"","permissions":"","namespace":"importx"}',
+);

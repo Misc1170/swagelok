@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  },
+  "scripts": {
+    "watch": "npx tailwindcss -i ./assets/resources/styles/css/input.css -o ./public/css/style.css --watch"
+  },
+  "dependencies": {
+    "flowbite": "^1.8.1"
+  }
+}
