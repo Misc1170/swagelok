@@ -1,2 +1,7 @@
 node_modules
 .idea/
+connectors
+core
+manager
+config.core.php
+package-lock.json

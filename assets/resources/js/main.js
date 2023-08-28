@@ -23,12 +23,8 @@ let openModal = document.getElementsByClassName("open-btn");
 for (let i = 0; i < openModal.length; i++) {
     openModal[i].addEventListener('click', () => {
         modal.style.display = "block";
-        // alert('here');
     });
-    console.log(openModal[i]);
 }
-
-// let openModal = document.querySelector(".open-btn");
 
 let closeModal = document.getElementById("close-btn");
 
