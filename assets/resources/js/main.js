@@ -13,8 +13,19 @@ burgerBtnClose.addEventListener('click', hamburger);
 // ВЫЗОВ BURGER MENU
 
 
-// ЗАПРОСИТЬ КП START
-// document.addEventListener('DOMContentLoaded', () => {
+// Форма мини при "Запросить КП" START
+let offer_form_mini = document.getElementById('offer_form_mini');
+offer_form_mini.addEventListener('click', () => {
+
+})
+offer_form_mini.classList.toggle('flex')
+offer_form_mini.classList.toggle('hidden')
+console.log(offer_form_mini)
+
+// Форма мини при "Запросить КП"  END
+
+
+// Форма модальное окно при "Добавить поле" START
 
 let modal = document.getElementById("my-modal");
 
@@ -35,6 +46,5 @@ let closeModal = document.getElementById("close-btn");
 closeModal.onclick = function () {
     modal.style.display = "none";
 }
-// })
 
-// ЗАПРОСИТЬ КП END
+// Форма модальное окно при "Добавить поле"  END
