@@ -1,0 +1,65 @@
+.mini_img_product_card {
+  opacity: 0.5;
+}
+
+.mini_img_product_card.active {
+  opacity: 1;
+}
+
+.product_card_form input,
+.product_card_form textarea {
+  padding-left: 30px;
+  background: #fff;
+  border: none;
+  border-radius: 24px;
+}
+
+.product_card_form input::placeholder,
+.product_card_form textarea::placeholder {
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 500;
+  color: #66B645;
+}
+
+
+.quick_order.active {
+  background: #fff;
+  color: #000;
+}
+
+.remove-inputs-field {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.add-inputs-field {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.pop_up__input {
+  border: none;
+  background: #fff;
+  border-radius: 16px;
+  padding: 0px 0px 4px 20px;
+}
+
+.pop_up__input::placeholder {
+  font-family: 'Tahoma';
+  font-size: 14px;
+  line-height: 16.9px;
+  color: #C9C9C9;
+}
+
+
+.col-2 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(12, auto);
+  row-gap: 5px;
+  column-gap: 10px;
+
+}

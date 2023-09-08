@@ -1,11 +1,22 @@
 <div class="flex flex-col justify-between gap-y-2 bg-white">
-  <img src="[[+tv.img]]" alt="ПРОДУКЦИЯ">
-  <div class="flex flex-col px-3 gap-y-1">
-    <strong>[[+pagetitle]]</strong>
-    <strong class="text-66B645 sm:block hidden">от [[+tv.price]] руб</strong>
-  </div>
-  <div class="flex sm:justify-end justify-between pb-4 px-3">
-    <strong class="text-66B645 sm:hidden">от [[+tv.price]] руб</strong>
-    <a class="btn-66B645 w-1/2" href=[[+alias]]><span class="font-medium">Подробнее</span></a>
-  </div>
+    <img src="[[+tv.img]]" alt="ПРОДУКЦИЯ">
+    <div class="flex flex-col px-3 gap-y-1">
+        <div>
+            [[- pdoCrumbs?
+            &exclude=`1,49`
+            &tplWrapper=`@INLINE
+            <div class="flex flex-wrap gap-2">[[+output]]</div>
+            `
+            &tpl=`@INLINE <strong>[[+pagetitle]]</strong>`
+            &outputSeparator=`<strong class="">—</strong>`
+            &showCurrent=`0`
+            ]]
+        </div>
+            <strong>[[ +pagetitle]]</strong>
+        <strong class="text-66B645 sm:block hidden">от [[+tv.price]] руб</strong>
+    </div>
+    <div class="flex sm:justify-end justify-between pb-4 px-3">
+        <strong class="text-66B645 sm:hidden">от [[+tv.price]] руб</strong>
+        <a class="btn-66B645 w-1/2" href=[[+alias]]><span class="font-medium">Подробнее</span></a>
+    </div>
 </div>

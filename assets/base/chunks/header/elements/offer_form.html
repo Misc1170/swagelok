@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--СЕРЫЙ ОВЕРЛЕЙ СТАРТ-->
+<div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full sm:px-0 px-2 z-40"
+     id="my-modal">
 
-</body>
-</html>
+    <!--ФОРМА СТАРТ-->
+        <form id="offer_form_modal" class="relative top-40 mx-auto p-5 border shadow-lg rounded-md bg-E7E7E7 flex flex-col gap-y-4 lg:w-4/12 md:w-5/12 sm:w-9/12 w-full z-50"
+              action="assets/base/snippets/form_processing.php"
+              method="post">
+
+            <!--        КНОПКА ЗАКРЫТИЯ ОКНА СТАРТ-->
+            <btn id="close-btn" class="flex items-center gap-x-3">
+                <img src="assets/resources/images/offer_form_icon.png">
+                <span class="text-66B645">Закрыть окно</span>
+            </btn>
+            <!--        КНОПКА ЗАКРЫТИЯ ОКНА КОНЕЦ-->
+
+            [[!offer_form_input_fields? &count=`5`]]
+
+            <div class="flex items-center justify-end">
+                <div class="flex gap-x-4">
+                    <p>Добавить поле</p>
+                    <div class="add-inputs-field">
+                        <img src="/assets/resources/images/plus-mark.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-x-4">
+                <input class="pop_up__input w-1/2" type="tel" name="phone" placeholder="Телефон" >
+                <input class="pop_up__input w-1/2" type="email" name="email" placeholder="E-mail" >
+            </div>
+
+            <button class="flex items-center justify-center py-2 text-white w-full bg-66B645 rounded-2xl" type="submit">
+                Отправить
+            </button>
+
+
+        </form>
+    <!--    ФОРМА КОНЕЦ-->
+
+</div>
+<!--СЕРЫЙ ОВЕРЛЕЙ КОНЕЦ-->

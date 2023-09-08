@@ -1,32 +1,30 @@
-<form id="offer_form_mini" class="absolute right-0 p-5 border shadow-lg rounded-md bg-E7E7E7 flex-col gap-y-4 lg:w-4/12 md:w-5/12 sm:w-9/12 w-full z-50"
-      action=""
-      method="post">
+<form
+        id="offer_form_mini"
+        class="p-5 border shadow-lg bg-E7E7E7 flex-col gap-y-4 hidden absolute md:top-full top-0 md:right-[20%] right-0 z-50 lg:w-4/12 md:w-5/12 sm:w-9/12 w-full "
+        action="assets/base/snippets/form_processing.php"
+        method="post">
 
-    <!--        КНОПКА ЗАКРЫТИЯ ОКНА СТАРТ-->
-<!--    <div class="flex items-center justify-start pe-4 gap-x-2">-->
-<!--        <p>Закрыть окно</p>-->
-<!--        <button id="close-btn" class="">-->
-<!--            <img src="/assets/resources/images/x-mark.png" alt="">-->
-<!--        </button>-->
-<!--    </div>-->
-    <!--        КНОПКА ЗАКРЫТИЯ ОКНА КОНЕЦ-->
+    <btn class="offer_mini__open md:hidden flex items-center gap-x-2">
+        <img src="assets/resources/images/offer_form_icon.png">
+        <span class="text-66B645">Закрыть окно</span>
+    </btn>
 
     [[!offer_form_input_fields? &count=`4`]]
 
-
-    <div class="flex items-center gap-x-4">
-        <input class="pop_up__input w-1/2" type="tel" name="phone" placeholder="Телефон" required>
-        <input class="pop_up__input w-1/2" type="email" name="email" placeholder="E-mail" required>
-    </div>
-
-    <div class="open-btn flex items-center justify-end">
-        <div class="flex gap-x-4">
+    <div class="flex items-center justify-end">
+        <div class="open-btn flex gap-x-4 cursor-pointer">
             <p>Добавить поле</p>
             <div class="add-inputs-field">
                 <img src="/assets/resources/images/plus-mark.png" alt="">
             </div>
         </div>
     </div>
+
+    <div class="flex items-center gap-x-4">
+        <input class="pop_up__input w-1/2" type="tel" name="phone" placeholder="Телефон" value="">
+        <input class="pop_up__input w-1/2" type="email" name="email" placeholder="E-mail">
+    </div>
+
 
     <button class="flex items-center justify-center py-2 text-white w-full bg-66B645 rounded-2xl" type="submit">
         Отправить
