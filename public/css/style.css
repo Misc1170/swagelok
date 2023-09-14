@@ -337,6 +337,47 @@ h3, h4, h5, h6, strong, span, p {
   padding-bottom: 7px;
 }
 
+.search-result-table tr th {
+  color: #5BB059;
+  padding: 5px 10px;
+  border-left: 2px solid #D1D1D1;
+  border-right: 2px solid #D1D1D1;
+  font-family: "Tahoma", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.search-result-table tr td {
+  color: #292929;
+  border: 2px solid #D1D1D1;
+  padding: 5px 10px;
+  text-align: left;
+  font-family: "Tahoma", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.search-result-table tr td a {
+  text-decoration: underline;
+}
+.search-result-table tr td a:hover {
+  color: #409840;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   background: #f3f3f3;
 }

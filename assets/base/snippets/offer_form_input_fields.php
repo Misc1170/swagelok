@@ -11,13 +11,3 @@ for ($i = 0; $i < $count; $i++) :
     </div>
 ';
 endfor;
-
-//echo '
-//            <div class="open-btn flex items-center justify-end">
-//                <div class="flex gap-x-4">
-//                    <p>Добавить поле</p>
-//                    <div class="add-inputs-field">
-//                        <img src="/assets/resources/images/plus-mark.png" alt="">
-//                    </div>
-//                </div>
-//            </div>';

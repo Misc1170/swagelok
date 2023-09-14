@@ -1,27 +1,35 @@
 <?php
-global $modx;
-/*Активируем почтовый сервис MODX*/
-$modx->getService('mail', 'mail.modPHPMailer');
-$modx->mail->set(modMail::MAIL_FROM, $modx->getOption('emailsender'));
-$modx->mail->set(modMail::MAIL_FROM_NAME, $modx->getOption('site_name'));
 
-/*Адрес получателя нашего письма*/
-$modx->mail->address('to', $_POST['email']);
+$emailPattern = '/^[A-Z0-9+_.-]+@[A-Z0-9.-]+$/i';
+$phonePattern = '/^\+7\([0-9]{3}\)-[0-9]{3}-[0-9]{2}-[0-9]{2}$/';
+$isNotValid = false;
+$data = [];
+$err = [];
 
-/*Заголовок сообщения*/
-$modx->mail->set(modMail::MAIL_SUBJECT, 'test note');
+if (isset($_POST)) {
+    $index = 0;
+    foreach ($_POST as $key => $item) {
 
-/*Подставляем чанк с телом письма (предварительно его нужно создать)*/
-$modx->mail->set(modMail::MAIL_BODY, $modx->getChunk('email_body'));
-
-/*Отправляем*/
-$modx->mail->setHTML(true);
-if (!$modx->mail->send()) {
-    $modx->log(modX::LOG_LEVEL_ERROR,'An error occurred while trying to send the email: '.$modx->mail->mailer->ErrorInfo);
+        if ($item != "") {
+            $data[$key] = clearData($item);
+        }
+    }
+    if (!preg_match($emailPattern, $data['email'])) {
+        $isNotValid = true;
+    }
+    if (preg_match($phonePattern, $data['phone'])) {
+        $isNotValid = true;
+        $err['phone'] = '<'
+    }
+    var_dump($data);
+    echo json_encode($data);
 }
-$modx->mail->reset();
-var_dump($_POST);
 
-$redirect = isset($_SERVER['HTTP_REFERER'])? $_SERVER['HTTP_REFERER']: '/katalogi';
-header("Location: $redirect");
-exit();
+function clearData($val)
+{
+    $val = trim($val);
+    $val = stripslashes($val);
+    $val = strip_tags($val);
+    $val = htmlspecialchars($val);
+    return $val;
+}

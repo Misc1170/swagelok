@@ -1,6 +1,17 @@
 @import "parts_scss/font_size";
 @import "parts_scss/product_card";
 @import "parts_scss/buttons";
+@import "parts_scss/search_result_table";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 body {
   background: #f3f3f3;

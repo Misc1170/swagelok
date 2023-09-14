@@ -1,0 +1,40 @@
+.search-result-table {
+  tr {
+    th {
+      color: #5BB059;
+      padding: 5px 10px;
+      border-left: 2px solid #D1D1D1;
+      border-right: 2px solid #D1D1D1;
+      font-family: 'Tahoma', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: center;
+
+
+    }
+
+    td {
+      color: #292929;
+      border: 2px solid #D1D1D1;
+      padding: 5px 10px;
+      text-align: left;
+      font-family: 'Tahoma', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: left;
+
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          color: #409840;
+        }
+      }
+
+    }
+  }
+}

@@ -5,3 +5,4 @@ core
 manager
 config.core.php
 package-lock.json
+.htaccess
