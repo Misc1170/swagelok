@@ -6,3 +6,7 @@ manager
 config.core.php
 package-lock.json
 .htaccess
+assets/resources/images/products/fitingi/
+!assets/resources/images/products/fitingi/baner.png
+assets/resources/images/products/valves/
+!assets/resources/images/products/valves/baner.png

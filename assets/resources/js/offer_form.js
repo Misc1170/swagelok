@@ -40,15 +40,58 @@ closeModal.onclick = function () {
 // Форма модальное окно при "Добавить поле" в offer_form_mini END
 $(document).ready(() => {
 
-let formMini = $('#offer_form_mini');
-$(formMini).on('submit', (e) => {
-    e.preventDefault();
-    const data = $(formMini).serializeArray();
+    let formMini = $('#offer_form_mini');
+    $(formMini).on('submit', (e) => {
 
-    console.log(data)
+        $(".pop_up__input").removeClass("has-error");
+        $(".error-message").remove();
 
-    $.post('assets/base/snippets/form_processing.php',data,(response) => {
-        console.log(response)
+        const data = $(formMini).serializeArray();
+
+        $.post('assets/base/snippets/form_processing.php', data, (response) => {
+            response = JSON.parse(response)
+            console.log(response)
+            if (!response.success) {
+
+                if (response.errors.count) {
+                    $.each(response.errors.count, (index, value) => {
+                        $(`#group-${index}-mini`).children('.pop_up__input').addClass('has-error');
+                        $(`#group-${index}-mini`).append(
+                            value
+                        );
+                    })
+                }
+
+                if (response.errors.phone) {
+                    $('#group-phone-mini input').addClass('has-error');
+                    $('#group-phone-mini').append(
+                        '<div class="help-block">' + response.errors.phone + '</div>'
+                    );
+                }
+                if (response.errors.email) {
+                    $('#group-email-mini input').addClass('has-error');
+                    $('#group-email-mini').append(
+                        '<div class="help-block">' + response.errors.email + '</div>'
+                    );
+                } else {
+                    $("#offer_form_mini").html(
+                        '<div class="alert alert-success flex flex-col justify-center items-center gap-y-4 py-24 px-10">' +
+                        '<p class="text-66B645">Спасибо за вашу заявку!</p>' +
+                        '<p>Мы свяжемся с вами в ближайшее время, чтобы обсудить детали</p>' +
+                        '</div>'
+                        // '<div class="alert alert-success">' + response.message + "</div>"
+                    );
+                }
+            }
+        })
+            .fail(() => {
+                $("#offer_form_mini").html(
+                    '<div class="alert alert-danger">Не получилось отправить форму, попробуйте позже.</div>'
+                );
+            })
+
+
+        e.preventDefault();
     })
-})
+
 });

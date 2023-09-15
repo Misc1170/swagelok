@@ -368,6 +368,14 @@ h3, h4, h5, h6, strong, span, p {
   color: #409840;
 }
 
+.has-error {
+  border: 1px solid #ee4141;
+}
+
+.error-message {
+  color: #863434;
+}
+
 * {
   margin: 0;
   padding: 0;
