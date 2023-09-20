@@ -60,20 +60,21 @@ if (!empty($errors)) {
     $data['success'] = true;
     $data['message'] = 'Success';
 
-    $message = 'test mail';
-    $modx->getService('smarty','smarty.modSmarty');
-//    $modx->getService('mail', 'mail.modPHPMailer');
-    $modx->mail->set(modMail::MAIL_BODY, $message);
-    $modx->mail->set(modMail::MAIL_FROM, 'alex.new.alex.new@gmail.com');
-    $modx->mail->set(modMail::MAIL_FROM_NAME, 'Johnny Tester');
-    $modx->mail->set(modMail::MAIL_SUBJECT, 'Check out my new email template!');
-    $modx->mail->address('to', 'sloopy1170@gmail.com');
-    $modx->mail->setHTML(true);
-    if (!$modx->mail->send()) {
-        $modx->log(modX::LOG_LEVEL_ERROR, 'An error occurred while trying to send the email: ' . $modx->mail->mailer->ErrorInfo);
-    }
-    $modx->mail->reset();
-    var_dump('В письме');
-    var_dump($modx->mail);
+//    $message = 'test mail';
+//    $modx->getService('smarty','smarty.modSmarty');
+//    $modx->mail->set(modMail::MAIL_BODY, $message);
+//    $modx->mail->set(modMail::MAIL_FROM, 'alex.new.alex.new@gmail.com');
+//    $modx->mail->set(modMail::MAIL_FROM_NAME, 'Johnny Tester');
+//    $modx->mail->set(modMail::MAIL_SUBJECT, 'Check out my new email template!');
+//    $modx->mail->address('to', 'sloopy1170@gmail.com');
+//    $modx->mail->setHTML(true);
+//    if (!$modx->mail->send()) {
+//        $modx->log(modX::LOG_LEVEL_ERROR, 'An error occurred while trying to send the email: ' . $modx->mail->mailer->ErrorInfo);
+//    }
+//    $modx->mail->reset();
+//    var_dump('В письме');
+//    var_dump($modx->mail);
 }
+mail('tgk1170@yandex.ru', 'Тема письма', 'Текст письма', 'From: sender@example.com');
+
 echo json_encode($data, JSON_UNESCAPED_UNICODE);

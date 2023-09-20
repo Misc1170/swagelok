@@ -6,15 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let searchField = document.querySelector('#default-search');
         let searchingString = searchField.value;
 
-        e.preventDefault()
-
-
         let option = {
             "task": "updateFilter",
             "props": {
                 "view": ["form_materials", "connect_size_1", "connect_size_2", "connect_type_1", "connect_type_2"],
-                "search": 'SS-4-P-RT'
-                // "search": searchingString
+                "search": searchingString
             }
             // 'task': 'updateTable',
             // 'props': {
@@ -32,18 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // console.log(option);
 
-        fetch('http://localhost:3000/', {
+        fetch('http://avy.ru:575', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
             },
-            body: option
-            // body: JSON.stringify(option)
+            // body: option
+            body: JSON.stringify(option)
         }).then((response) => {
-            alert(response.status);
             console.log(response);
             return response;
         }).then(result => console.log(result));
+
+        e.preventDefault()
 
     });
 

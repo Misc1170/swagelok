@@ -39,59 +39,123 @@ closeModal.onclick = function () {
 }
 // Форма модальное окно при "Добавить поле" в offer_form_mini END
 $(document).ready(() => {
-
     let formMini = $('#offer_form_mini');
-    $(formMini).on('submit', (e) => {
+    let form = $('#offer_form_modal');
 
-        $(".pop_up__input").removeClass("has-error");
-        $(".error-message").remove();
+    formOfferSubmit(formMini, '-mini');
+    formOfferSubmit(form);
 
-        const data = $(formMini).serializeArray();
+    function formOfferSubmit(formID, typeForm = '') {
+        let form = $(formID);
+        $(form).on('submit', (e) => {
 
-        $.post('assets/base/snippets/form_processing.php', data, (response) => {
-            response = JSON.parse(response)
-            console.log(response)
-            if (!response.success) {
+            $(".pop_up__input").removeClass("has-error");
+            $(".error-message").remove();
 
-                if (response.errors.count) {
-                    $.each(response.errors.count, (index, value) => {
-                        $(`#group-${index}-mini`).children('.pop_up__input').addClass('has-error');
-                        $(`#group-${index}-mini`).append(
-                            value
+            const data = $(form).serializeArray();
+
+            $.post('assets/base/snippets/form_processing.php', data, (response) => {
+                response = JSON.parse(response)
+                console.log(response)
+                if (!response.success) {
+
+                    if (response.errors.count) {
+                        $.each(response.errors.count, (index, value) => {
+                            $(`#group-${index}${typeForm}`).children('.pop_up__input').addClass('has-error');
+                            $(`#group-${index}${typeForm}`).append(
+                                value
+                            );
+                        })
+                    }
+
+                    if (response.errors.phone) {
+                        $(`#group-phone${typeForm} input`).addClass('has-error');
+                        $(`#group-phone${typeForm}`).append(
+                            '<div class="help-block">' + response.errors.phone + '</div>'
                         );
-                    })
+                    }
+                    if (response.errors.email) {
+                        $(`#group-email${typeForm} input`).addClass('has-error');
+                        $(`#group-email${typeForm}`).append(
+                            '<div class="help-block">' + response.errors.email + '</div>'
+                        );
+                    }
+                    // else {
+                    //     $(formID).html(
+                    //         '<div class="alert alert-success flex flex-col justify-center items-center gap-y-4 py-24 px-10">' +
+                    //         '<p class="text-66B645">Спасибо за вашу заявку!</p>' +
+                    //         '<p>Мы свяжемся с вами в ближайшее время, чтобы обсудить детали</p>' +
+                    //         '</div>'
+                    //     );
+                    // }
                 }
-
-                if (response.errors.phone) {
-                    $('#group-phone-mini input').addClass('has-error');
-                    $('#group-phone-mini').append(
-                        '<div class="help-block">' + response.errors.phone + '</div>'
-                    );
-                }
-                if (response.errors.email) {
-                    $('#group-email-mini input').addClass('has-error');
-                    $('#group-email-mini').append(
-                        '<div class="help-block">' + response.errors.email + '</div>'
-                    );
-                } else {
-                    $("#offer_form_mini").html(
-                        '<div class="alert alert-success flex flex-col justify-center items-center gap-y-4 py-24 px-10">' +
-                        '<p class="text-66B645">Спасибо за вашу заявку!</p>' +
-                        '<p>Мы свяжемся с вами в ближайшее время, чтобы обсудить детали</p>' +
-                        '</div>'
-                        // '<div class="alert alert-success">' + response.message + "</div>"
-                    );
-                }
-            }
-        })
-            .fail(() => {
-                $("#offer_form_mini").html(
-                    '<div class="alert alert-danger">Не получилось отправить форму, попробуйте позже.</div>'
-                );
             })
+                .fail(() => {
+                    $(formID).html(
+                        '<div class="alert alert-danger">Не получилось отправить форму, попробуйте позже.</div>'
+                    );
+                })
 
 
-        e.preventDefault();
-    })
+            e.preventDefault();
+        })
+
+    }
+
+    // $(document).ready(() => {
+    //
+    // let formMini = $('#offer_form_mini');
+    // $(formMini).on('submit', (e) => {
+    //
+    //     $(".pop_up__input").removeClass("has-error");
+    //     $(".error-message").remove();
+    //
+    //     const data = $(formMini).serializeArray();
+    //
+    //     $.post('assets/base/snippets/form_processing.php', data, (response) => {
+    //         response = JSON.parse(response)
+    //         console.log(response)
+    //         if (!response.success) {
+    //
+    //             if (response.errors.count) {
+    //                 $.each(response.errors.count, (index, value) => {
+    //                     $(`#group-${index}-mini`).children('.pop_up__input').addClass('has-error');
+    //                     $(`#group-${index}-mini`).append(
+    //                         value
+    //                     );
+    //                 })
+    //             }
+    //
+    //             if (response.errors.phone) {
+    //                 $('#group-phone-mini input').addClass('has-error');
+    //                 $('#group-phone-mini').append(
+    //                     '<div class="help-block">' + response.errors.phone + '</div>'
+    //                 );
+    //             }
+    //             if (response.errors.email) {
+    //                 $('#group-email-mini input').addClass('has-error');
+    //                 $('#group-email-mini').append(
+    //                     '<div class="help-block">' + response.errors.email + '</div>'
+    //                 );
+    //             } else {
+    //                 $("#offer_form_mini").html(
+    //                     '<div class="alert alert-success flex flex-col justify-center items-center gap-y-4 py-24 px-10">' +
+    //                     '<p class="text-66B645">Спасибо за вашу заявку!</p>' +
+    //                     '<p>Мы свяжемся с вами в ближайшее время, чтобы обсудить детали</p>' +
+    //                     '</div>'
+    //                     // '<div class="alert alert-success">' + response.message + "</div>"
+    //                 );
+    //             }
+    //         }
+    //     })
+    //         .fail(() => {
+    //             $("#offer_form_mini").html(
+    //                 '<div class="alert alert-danger">Не получилось отправить форму, попробуйте позже.</div>'
+    //             );
+    //         })
+    //
+    //
+    //     e.preventDefault();
+    // })
 
 });
