@@ -1,15 +1,21 @@
 {
   "devDependencies": {
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.68.0",
+    "sass-loader": "^12.1.0",
     "tailwindcss": "^3.3.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "watch": "npx tailwindcss -i ./assets/resources/styles/css/tailwind.css -o ./public/css/tailwind.css --watch"
+    "watch": "mix watch"
   },
   "dependencies": {
     "flowbite": "^1.8.1",
     "imask": "^7.1.3",
+    "lodash": "^4.17.21",
+    "mix-tailwindcss": "^1.3.0",
     "validate.js": "^0.13.1"
   },
   "name": "swagelok_modx",
@@ -18,5 +24,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "- PHP >= 8.1"
 }
